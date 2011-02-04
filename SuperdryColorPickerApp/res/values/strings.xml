@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">SuperdryColorPicker</string>
+	<string name="introduction">SuperdryColorPicker is color picker library for
+		Android. This app is demonstration. This source code is here (
+		http://code.google.com/p/superdry-colorpicker )</string>
+	<string name="contact">Develper
+		:superdry\nmail:superdry.app@gmail.com\nTwitter:@lychee(
+		http://twitter.com/lychee )</string>
+
+</resources>
