@@ -1,4 +1,4 @@
-package org.superdry.sample;
+package org.superdry.util.colorpicker;
 
 
 import android.app.Activity;
@@ -13,7 +13,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
 	private Paint mPaint;
 	Button startBtn;
 	View color;
-	//View nextColor;
 	int changedColor;
 	private static final int initColor = 0xFFFF0000;
 	private static final int ACTION_GETCOLOR = 1;
