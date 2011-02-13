@@ -1,6 +1,5 @@
 package org.superdry.util.colorpicker;
 
-
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Paint;
@@ -11,7 +10,8 @@ import android.widget.Button;
 public class MainActivity extends Activity implements View.OnClickListener {
 
 	private Paint mPaint;
-	Button startBtn;
+	private Button startBtn;
+	private Button startPref;
 	View color;
 	int changedColor;
 	private static final int initColor = 0xFFFF0000;
@@ -26,6 +26,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
 		color.setBackgroundColor(changedColor);
 		startBtn = (Button) findViewById(R.id.StartButton);
 		startBtn.setOnClickListener(this);
+		startPref = (Button) findViewById(R.id.StartPreference);
+		startPref.setOnClickListener(this);
 		mPaint = new Paint();
 		mPaint.setAntiAlias(true);
 		mPaint.setDither(true);
@@ -46,7 +48,13 @@ public class MainActivity extends Activity implements View.OnClickListener {
 			Intent intent = new Intent(this,
 					org.superdry.util.colorpicker.lib.SuperdryColorPicker.class);
 			intent.putExtra("SelectedColor", changedColor);
-			startActivityForResult(intent, org.superdry.util.colorpicker.lib.SuperdryColorPicker.ACTION_GETCOLOR);
+			startActivityForResult(
+					intent,
+					org.superdry.util.colorpicker.lib.SuperdryColorPicker.ACTION_GETCOLOR);
+			break;
+		case R.id.StartPreference:
+			Intent prefIntent = new Intent(this, PrefActivity.class);
+			startActivity(prefIntent);
 			break;
 		}
 	}
@@ -60,7 +68,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 					changedColor = b.getInt("SelectedColor");
 				}
 			} else if (resultCode == RESULT_CANCELED) {
-				changedColor = initColor;
+				// 何もしない
 			}
 			mPaint.setColor(changedColor);
 			color.setBackgroundColor(changedColor);
