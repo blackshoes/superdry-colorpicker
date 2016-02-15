@@ -1,0 +1,1 @@
+SuperdryColorPicker is color picker library for Android. This app is demonstration.
